@@ -226,7 +226,7 @@ void add_advanced_group_properties(obs_properties_t *ppts, struct cloudvocal_dat
 	obs_properties_add_bool(advanced_config_group, "process_while_muted",
 				MT_("process_while_muted"));
 	obs_properties_add_int_slider(advanced_config_group, "min_sub_duration",
-				      MT_("min_sub_duration"), 1000, 5000, 50);
+				      MT_("min_sub_duration"), 300, 5000, 50);
 	obs_properties_add_int_slider(advanced_config_group, "max_sub_duration",
 				      MT_("max_sub_duration"), 1000, 5000, 50);
 
@@ -402,7 +402,7 @@ void cloudvocal_defaults(obs_data_t *s)
 	obs_data_set_default_bool(s, "truncate_output_file", false);
 	obs_data_set_default_bool(s, "only_while_recording", false);
 	obs_data_set_default_bool(s, "rename_file_to_match_recording", true);
-	obs_data_set_default_int(s, "min_sub_duration", 1000);
+	obs_data_set_default_int(s, "min_sub_duration", 500);
 	obs_data_set_default_int(s, "max_sub_duration", 3000);
 	obs_data_set_default_bool(s, "advanced_settings", false);
 	obs_data_set_default_bool(s, "partial_group", true);
