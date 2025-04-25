@@ -287,6 +287,8 @@ void add_general_group_properties(obs_properties_t *ppts)
 				     "revai");
 	obs_property_list_add_string(transcription_cloud_provider_select_list, MT_("Deepgram"),
 				     "deepgram");
+	obs_property_list_add_string(transcription_cloud_provider_select_list, MT_("Speechmatics"),
+				     "speechmatics");
 	// obs_property_list_add_string(transcription_cloud_provider_select_list, MT_("AWS"), "aws");
 
 	obs_property_t *subs_output =
