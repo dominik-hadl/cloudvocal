@@ -393,7 +393,7 @@ void cloudvocal_defaults(obs_data_t *s)
 
 	obs_data_set_default_int(s, "log_level", LOG_DEBUG);
 	obs_data_set_default_bool(s, "log_words", false);
-	obs_data_set_default_bool(s, "caption_to_stream", false);
+	obs_data_set_default_bool(s, "caption_to_stream", true);
 	obs_data_set_default_string(s, "transcription_language_select", "__en__");
 	obs_data_set_default_string(s, "transcription_cloud_provider", "clova");
 	obs_data_set_default_string(s, "subtitle_sources", "none");
