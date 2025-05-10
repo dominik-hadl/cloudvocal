@@ -65,6 +65,7 @@ target_sources(
           src/cloud-providers/cloud-provider.cpp
           src/cloud-providers/clova/clova-provider.cpp
           src/cloud-providers/deepgram/deepgram-provider.cpp
+          src/cloud-providers/speechmatics/speechmatics-provider.cpp
           src/cloud-providers/google/google-provider.cpp
           src/cloud-providers/revai/revai-provider.cpp
           src/utils/ssl-utils.cpp

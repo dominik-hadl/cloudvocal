@@ -5,6 +5,7 @@
 #include "aws/aws_provider.h"
 #include "revai/revai-provider.h"
 #include "deepgram/deepgram-provider.h"
+#include "speechmatics/speechmatics-provider.h"
 
 std::shared_ptr<CloudProvider> createCloudProvider(const std::string &providerType,
 						   CloudProvider::TranscriptionCallback callback,
@@ -20,6 +21,8 @@ std::shared_ptr<CloudProvider> createCloudProvider(const std::string &providerTy
 		return std::make_unique<RevAIProvider>(callback, gf);
 	} else if (providerType == "deepgram") {
 		return std::make_unique<DeepgramProvider>(callback, gf);
+	} else if (providerType == "speechmatics") {
+		return std::make_unique<SpeechmaticsProvider>(callback, gf);
 	}
 
 	return nullptr; // Return nullptr if no matching provider is found
