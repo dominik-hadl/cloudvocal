@@ -68,7 +68,7 @@ The plugin can be built on Windows, macOS, and Linux platforms. The build proces
 Both Mac OSX and Linux rely on Conan for dependencies. Install Conan, e.g. `pip install conan`, and install the dependencies:
 ```sh
 $ conan profile detect --force
-$ conan install . --output-folder=./build_conan --build=missing -g CMakeDeps
+$ conan install . --update --output-folder=./build_conan --build=missing -g CMakeDeps
 ```
 
 ### Mac OSX
