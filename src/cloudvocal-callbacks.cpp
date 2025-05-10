@@ -178,12 +178,15 @@ void send_caption_to_stream(DetectionResultWithText result, const std::string &s
 			    struct cloudvocal_data *gf)
 {
 	obs_output_t *streaming_output = obs_frontend_get_streaming_output();
-	if (streaming_output) {
+	if (streaming_output && str_copy.length() > 0) {
 		// calculate the duration in seconds
 		const double duration =
 			(double)(result.end_timestamp_ms - result.start_timestamp_ms) / 1000.0;
 		// prevent the duration from being too short or too long
-		const double effective_duration = std::min(std::max(2.0, duration), 7.0);
+		const double min_duration = static_cast<double>(gf->min_sub_duration) / 1000.0f;
+		const double max_duration = static_cast<double>(gf->max_sub_duration) / 1000.0f;
+		const double effective_duration =
+			std::min(std::max(min_duration, duration), max_duration);
 		obs_log(gf->log_level,
 			"Sending caption to streaming output: %s (raw duration %.3f, effective duration %.3f)",
 			str_copy.c_str(), duration, effective_duration);

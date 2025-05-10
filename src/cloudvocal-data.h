@@ -85,6 +85,8 @@ struct cloudvocal_data {
 	std::string cloud_provider_api_key;
 	std::string cloud_provider_secret_key;
 
+	bool partial_transcription;
+
 	std::map<std::string, std::string> filter_words_replace;
 
 	// Translation options

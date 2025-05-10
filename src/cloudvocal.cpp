@@ -166,6 +166,7 @@ void cloudvocal_update(void *data, obs_data_t *s)
 	gf->start_timestamp_ms = now_ms();
 	gf->sentence_number = 1;
 	gf->process_while_muted = obs_data_get_bool(s, "process_while_muted");
+	gf->partial_transcription = obs_data_get_bool(s, "partial_transcription");
 	gf->min_sub_duration = (int)obs_data_get_int(s, "min_sub_duration");
 	gf->max_sub_duration = (int)obs_data_get_int(s, "max_sub_duration");
 	gf->last_sub_render_time = now_ms();
