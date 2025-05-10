@@ -104,7 +104,11 @@ protected:
 
 	void processResults()
 	{
-		while (running && !stop_requested) {
+		while (!stop_requested) {
+			if (!running) {
+				std::this_thread::sleep_for(std::chrono::milliseconds(10));
+				continue;
+			}
 			readResultsFromTranscription();
 		}
 
