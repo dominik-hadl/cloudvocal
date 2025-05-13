@@ -51,7 +51,7 @@ runs:
         : Build Dependencies 🛠️
         echo ::group::Build Dependencies
         conan profile detect --force
-        conan install ${{github.workspace}} --output-folder=${{github.workspace}}/build_conan --build=missing -g CMakeDeps
+        conan install ${{github.workspace}} --update --output-folder=${{github.workspace}}/build_conan --build=missing -g CMakeDeps
         echo ::endgroup::
 
     - name: Build Windows Dependencies 🛠️
